@@ -11,7 +11,6 @@ type Props = {
 
 const PageLayout = ({ _site, children }: Props) => {
   const { richTextDescriptionV2 } = _site;
-  console.log(richTextDescriptionV2);
   return (
     <div className="min-h-screen">
       <Header _site={_site} />
@@ -22,7 +21,9 @@ const PageLayout = ({ _site, children }: Props) => {
             <div className="row align-items-end h-100">
               <div className="col-lg-6">
                 <div className="content">
-                  <h1 className="title">{_site.name}</h1>
+                  <h1 className="title" style={{ fontSize: "51px" }}>
+                    {_site.name}
+                  </h1>
                   <div className="copy"></div>
 
                   <div className="buttons"></div>
