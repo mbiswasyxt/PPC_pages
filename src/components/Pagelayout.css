@@ -132,3 +132,37 @@ a {
 .breadcrumbs span {
   position: relative;
 }
+
+@media (min-width: 992px) {
+  .section-title {
+    margin-bottom: 48px;
+  }
+}
+.section-title {
+  border-top: solid 1px #bfcad3;
+  padding-top: 8px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 992px) {
+  h3,
+  .h3,
+  .section-title .title {
+    font-size: 28px;
+  }
+}
+h3,
+.h3,
+.section-title .title,
+.m-about .left .text,
+.m-course-header .course-title .degree,
+.c-content * + h3 {
+  font-family: "GalaxieCopernicus", "GalaxieLocal", sans-serif;
+  font-weight: 500;
+}
+.head-line {
+  height: 2px;
+  background: cyan;
+  width: 3em;
+  margin-top: 4px;
+}

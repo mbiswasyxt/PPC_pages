@@ -10,7 +10,8 @@ type Props = {
 };
 
 const PageLayout = ({ _site, children }: Props) => {
-  const { richTextDescriptionV2 } = _site;
+  const { richTextDescriptionV2, c_whystudy } = _site;
+  console.log(c_whystudy);
   return (
     <div className="min-h-screen">
       <Header _site={_site} />
@@ -87,6 +88,184 @@ const PageLayout = ({ _site, children }: Props) => {
             alt="Arden University rated 4.2 out of 5 by WhatUni"
             src="https://cdn.arden.ac.uk/s3fs-public/2021-03/WhatUni_Review_10.png?VersionId=cupbQ9A0RrwUKCRgY3bhKqxjLFHVRzxt"
           />
+        </div>
+      </div>
+
+      <div style={{ background: "white", marginTop: "5em" }}>
+        <div className="container-fluid">
+          <div className="section-title">
+            <h2 className="title" style={{ color: "#3f4952" }}>
+              Why study with Arden University?
+            </h2>
+          </div>
+          <div style={{ marginBottom: "4em" }}>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <div style={{ width: "45%" }}>
+                <div style={{ marginBottom: "1em" }}>
+                  <img
+                    src={c_whystudy.studyimage.url}
+                    style={{ height: "120px" }}
+                  />
+                </div>
+                <div style={{ width: "40em", lineHeight: "30px" }}>
+                  <h3
+                    style={{
+                      fontFamily: "initial",
+                      fontWeight: 500,
+                      color: "darkslategrey",
+                      fontSize: "xx-large",
+                    }}
+                  >
+                    {c_whystudy.title}
+                  </h3>
+                  <div className="head-line"></div>
+                </div>
+                <div
+                  style={{ marginTop: "2em", width: "40em", color: "#3f4952" }}
+                >
+                  {c_whystudy.titleDesc}
+                </div>
+              </div>
+              <div style={{ width: "45%" }}>
+                <div style={{ marginBottom: "1em" }}>
+                  <img
+                    src={c_whystudy.studyimage2.url}
+                    // style={{ height: "120px" }}
+                  />
+                </div>
+                <div style={{ width: "40em", lineHeight: "30px" }}>
+                  <h3
+                    style={{
+                      fontFamily: "initial",
+                      fontWeight: 500,
+                      color: "darkslategrey",
+                      fontSize: "xx-large",
+                    }}
+                  >
+                    {c_whystudy.title2}
+                  </h3>
+                  <div className="head-line"></div>
+                </div>
+                <div
+                  style={{ marginTop: "2em", width: "40em", color: "#3f4952" }}
+                >
+                  {c_whystudy.titleDesc2}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style={{ marginBottom: "4em" }}>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <div style={{ width: "45%" }}>
+                <div style={{ marginBottom: "1em" }}>
+                  <img
+                    src={c_whystudy.studyimage3.url}
+                    // style={{ height: "120px" }}
+                  />
+                </div>
+                <div style={{ width: "40em", lineHeight: "30px" }}>
+                  <h3
+                    style={{
+                      fontFamily: "initial",
+                      fontWeight: 500,
+                      color: "darkslategrey",
+                      fontSize: "xx-large",
+                    }}
+                  >
+                    {c_whystudy.title3}
+                  </h3>
+                  <div className="head-line"></div>
+                </div>
+                <div
+                  style={{ marginTop: "2em", width: "40em", color: "#3f4952" }}
+                >
+                  {c_whystudy.titleDesc3}
+                </div>
+              </div>
+              <div style={{ width: "45%" }}>
+                <div style={{ marginBottom: "1em" }}>
+                  <img
+                    src={c_whystudy.studyimage4.url}
+                    // style={{ height: "120px" }}
+                  />
+                </div>
+                <div style={{ width: "40em", lineHeight: "30px" }}>
+                  <h3
+                    style={{
+                      fontFamily: "initial",
+                      fontWeight: 500,
+                      color: "darkslategrey",
+                      fontSize: "xx-large",
+                    }}
+                  >
+                    {c_whystudy.title4}
+                  </h3>
+                  <div className="head-line"></div>
+                </div>
+                <div
+                  style={{ marginTop: "2em", width: "40em", color: "#3f4952" }}
+                >
+                  {c_whystudy.titleDesc4}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style={{ marginBottom: "4em" }}>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <div style={{ width: "45%" }}>
+                <div style={{ marginBottom: "1em" }}>
+                  <img
+                    src={c_whystudy.studyimage5.url}
+                    style={{ height: "200px" }}
+                  />
+                </div>
+                <div style={{ width: "40em", lineHeight: "30px" }}>
+                  <h3
+                    style={{
+                      fontFamily: "initial",
+                      fontWeight: 500,
+                      color: "darkslategrey",
+                      fontSize: "xx-large",
+                    }}
+                  >
+                    {c_whystudy.title5}
+                  </h3>
+                  <div className="head-line"></div>
+                </div>
+                <div
+                  style={{ marginTop: "2em", width: "40em", color: "#3f4952" }}
+                >
+                  {c_whystudy.titleDesc5}
+                </div>
+              </div>
+              <div style={{ width: "45%" }}>
+                <div style={{ marginBottom: "1em" }}>
+                  <img
+                    src={c_whystudy.studyimage6.url}
+                    // style={{ height: "130px" }}
+                  />
+                </div>
+                <div style={{ width: "40em", lineHeight: "30px" }}>
+                  <h3
+                    style={{
+                      fontFamily: "initial",
+                      fontWeight: 500,
+                      color: "darkslategrey",
+                      fontSize: "xx-large",
+                    }}
+                  >
+                    {c_whystudy.title6}
+                  </h3>
+                  <div className="head-line"></div>
+                </div>
+                <div
+                  style={{ marginTop: "2em", width: "40em", color: "#3f4952" }}
+                >
+                  {c_whystudy.titleDesc6}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <Footer _site={_site}></Footer>
