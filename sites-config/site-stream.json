@@ -1,0 +1,28 @@
+{
+  "$id": "site-entity",
+  "filter": {
+    "entityIds": ["6750086754881147068"]
+  },
+  "source": "knowledgeGraph",
+  "fields": [
+    "name",
+    "richTextDescriptionV2",
+    "c_whystudy",
+    "c_title_arden",
+    "c_desc_arden",
+    "c_image_arden",
+    "c_course",
+    "c_startJourney",
+    "c_footerImage",
+    "slug",
+    "logo",
+    "websiteUrl",
+    "landingPageUrl",
+    "shortDescriptionV2",
+    "c_headerImage"
+  ],
+  "localization": {
+    "locales": ["en"],
+    "primary": false
+  }
+}

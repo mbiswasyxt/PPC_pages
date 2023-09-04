@@ -1,0 +1,134 @@
+.m-sub-landing-header {
+  border-bottom: 8px solid #26f1ea;
+}
+.u-color-white {
+  color: #fff !important;
+}
+.u-bg-midnight-100,
+.c-compare-nav {
+  background-color: #001e50 !important;
+}
+
+.m-sub-landing-header--basic .inner,
+.m-sub-landing-header--404 .inner {
+  background-image: url(https://d2n98vq36tw7n9.cloudfront.net/s3fs-public/background_and_gradient/header-pattern.svg);
+}
+
+.m-sub-landing-header--basic .inner,
+.m-sub-landing-header--small-image .inner,
+.m-sub-landing-header--404 .inner {
+  background-position: 100% 0%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media (min-width: 992px) {
+  .m-sub-landing-header .inner {
+    min-height: 300px;
+  }
+}
+
+.m-sub-landing-header .inner {
+  display: flex;
+  position: relative;
+  min-height: 240px;
+}
+
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.m-sub-header--article .inner,
+.m-sub-landing-header .tags {
+  padding-right: 60px !important;
+  padding-left: 60px !important;
+}
+
+@media (min-width: 992px) {
+  .row:not(.no-gutters) {
+    margin-right: -16px !important;
+    margin-left: -16px !important;
+  }
+}
+
+.align-items-end {
+  align-items: flex-end !important;
+}
+
+.h-100 {
+  height: 100% !important;
+}
+
+@media (min-width: 992px) {
+  .row:not(.no-gutters) > .col,
+  .row:not(.no-gutters) > [class*="col-"] {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+@media (min-width: 992px) {
+  .col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 70%;
+  }
+}
+
+@media (min-width: 992px) {
+  .m-sub-landing-header .content {
+    padding: 48px 0;
+  }
+}
+
+@media (min-width: 992px) {
+  h1,
+  .h1,
+  .c-about-stat .stats .number,
+  .c-location .content .title {
+    font-size: 51px;
+  }
+}
+.m-sub-landing-header .content .copy {
+  font-weight: 500;
+}
+
+@media (min-width: 992px) {
+  .m-sub-landing-header .content .buttons {
+    margin-top: 24px;
+  }
+}
+.m-sub-landing-header .breadcrumbs {
+  position: relative;
+  padding: 20px 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.breadcrumbs span a {
+  transition: all 0.3s ease-in;
+}
+
+.breadcrumbs span a,
+.breadcrumbs span div {
+  color: #fff;
+  white-space: nowrap;
+}
+a {
+  /* color: #007bff; */
+  text-decoration: none;
+  background-color: transparent;
+}
+@media (min-width: 992px) {
+  .breadcrumbs {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+.breadcrumbs span:not(:first-child) {
+  margin-left: 32px;
+}
+.breadcrumbs span {
+  position: relative;
+}
