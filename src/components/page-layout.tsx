@@ -10,8 +10,21 @@ type Props = {
 };
 
 const PageLayout = ({ _site, children }: Props) => {
-  const { richTextDescriptionV2, c_whystudy } = _site;
-  console.log(c_whystudy);
+  const {
+    richTextDescriptionV2,
+    c_whystudy,
+    c_title_arden,
+    c_desc_arden,
+    c_image_arden,
+    shortDescriptionV2,
+    c_courseSelectorImage,
+    c_course,
+    c_journeyenquiry,
+    c_journeycallback,
+    c_journeyopendays,
+    c_journeybrochure,
+  } = _site;
+  console.log(c_course);
   return (
     <div className="min-h-screen">
       <Header _site={_site} />
@@ -265,6 +278,195 @@ const PageLayout = ({ _site, children }: Props) => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div style={{ background: "#eef4fa", padding: "5em 4em" }}>
+        <div style={{ position: "relative" }}>
+          <div className="section-title">
+            <h2 className="title" style={{ color: "#3f4952" }}>
+              {c_title_arden}
+            </h2>
+          </div>
+          <div style={{ display: "flex" }}>
+            <div style={{ width: "50%" }}></div>
+            <div style={{ width: "50%" }}>
+              <img src={c_image_arden.url} />
+            </div>
+          </div>
+          <div
+            style={{
+              background: "white",
+              padding: "5em",
+              width: "50%",
+              position: "absolute",
+              bottom: "25%",
+              marginLeft: "6em",
+              color: "#3f4952",
+            }}
+          >
+            {c_desc_arden}
+          </div>
+        </div>
+        <div className="section-title" style={{ marginTop: "5em" }}>
+          <h2 className="title" style={{ color: "#3f4952" }}>
+            Find your perfect Law degree
+          </h2>
+        </div>
+        <div>
+          <img src={c_courseSelectorImage.url} />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            marginTop: "1em",
+
+            justifyContent: "space-between",
+          }}
+        >
+          <div
+            style={{ width: "32%", backgroundColor: "white", padding: "2em" }}
+          >
+            <div
+              style={{
+                borderBottom: "solid 1px #bfcad3",
+                paddingBottom: "1em",
+                fontSize: "1.5em",
+              }}
+            >
+              {c_course.courseName1}
+            </div>
+            <div style={{ marginBottom: "4em" }}>
+              <div style={{ display: "flex", padding: "1em 0em 0em" }}>
+                <img
+                  src="https://cdn.arden.ac.uk/s3fs-public/icons/about/award.svg"
+                  className="img-icon"
+                />
+                {c_course.degreeName1}
+              </div>
+              <div style={{ display: "flex", padding: "1em 0em 0em" }}>
+                <img
+                  src="https://cdn.arden.ac.uk/s3fs-public/icons/about/locations.svg"
+                  className="img-icon"
+                />
+                {c_course.courseLoc1}
+              </div>
+            </div>
+            <a
+              href="/our-courses/undergraduate/law-degrees/llb-hons"
+              className="view-course"
+              role="button"
+            >
+              View course →
+            </a>
+          </div>
+          <div
+            style={{ width: "32%", backgroundColor: "white", padding: "2em" }}
+          >
+            <div
+              style={{
+                borderBottom: "solid 1px #bfcad3",
+                paddingBottom: "1em",
+                fontSize: "1.5em",
+              }}
+            >
+              {c_course.courseName2}
+            </div>
+            <div style={{ marginBottom: "4em" }}>
+              <div style={{ display: "flex", padding: "1em 0em 0em" }}>
+                <img
+                  src="https://cdn.arden.ac.uk/s3fs-public/icons/about/award.svg"
+                  className="img-icon"
+                />
+                {c_course.degreeName3}
+                {/* ABCD */}
+              </div>
+              <div style={{ display: "flex", padding: "1em 0em 0em" }}>
+                <img
+                  src="https://cdn.arden.ac.uk/s3fs-public/icons/about/locations.svg"
+                  className="img-icon"
+                />
+                {c_course.courseLoc2}
+              </div>
+            </div>
+            <a
+              href="/our-courses/undergraduate/law-degrees/llb-hons"
+              className="view-course"
+              role="button"
+            >
+              View course →
+            </a>
+          </div>
+          <div
+            style={{ width: "30%", backgroundColor: "white", padding: "2em" }}
+          >
+            <div
+              style={{
+                borderBottom: "solid 1px #bfcad3",
+                paddingBottom: "1em",
+                fontSize: "1.5em",
+              }}
+            >
+              {c_course.courseName3}
+            </div>
+            <div style={{ marginBottom: "4em" }}>
+              <div style={{ display: "flex", padding: "1em 0em 0em" }}>
+                <img
+                  src="https://cdn.arden.ac.uk/s3fs-public/icons/about/award.svg"
+                  className="img-icon"
+                />
+                {c_course.degreeName3}
+              </div>
+              <div style={{ display: "flex", padding: "1em 0em 0em" }}>
+                <img
+                  src="https://cdn.arden.ac.uk/s3fs-public/icons/about/locations.svg"
+                  className="img-icon"
+                />
+                {c_course.courseLoc3}
+              </div>
+            </div>
+            <a
+              href="/our-courses/undergraduate/law-degrees/llb-hons"
+              className="view-course"
+              role="button"
+            >
+              View course →
+            </a>
+          </div>
+        </div>
+        <div className="section-title" style={{ marginTop: "7em" }}>
+          <h2 className="title" style={{ color: "#3f4952" }}>
+            Start your journey with Arden University
+          </h2>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            marginTop: "2em",
+            flexDirection: "row",
+          }}
+        >
+          <div style={{ width: "24%", background: "white" }}>
+            <a href="https://arden.ac.uk/blended-law-manchester-lp">
+              <img src={c_journeyenquiry.url} />
+            </a>
+          </div>
+          <div style={{ width: "24%", background: "white" }}>
+            <a href="https://arden.ac.uk/blended-law-manchester-lp">
+              <img src={c_journeycallback.url} />
+            </a>
+          </div>
+          <div style={{ width: "24%", background: "white" }}>
+            <a href="https://arden.ac.uk/knowledge-base/virtual-events-webinars/upcoming-events">
+              <img src={c_journeyopendays.url} />
+            </a>
+          </div>
+          <div style={{ width: "24%", background: "white" }}>
+            <a href="https://arden.ac.uk/blended-law-manchester-lp">
+              <img src={c_journeybrochure.url} />
+            </a>
           </div>
         </div>
       </div>

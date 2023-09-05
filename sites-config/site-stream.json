@@ -19,7 +19,12 @@
     "websiteUrl",
     "landingPageUrl",
     "shortDescriptionV2",
-    "c_headerImage"
+    "c_headerImage",
+    "c_courseSelectorImage",
+    "c_journeyenquiry",
+    "c_journeycallback",
+    "c_journeyopendays",
+    "c_journeybrochure"
   ],
   "localization": {
     "locales": ["en"],
