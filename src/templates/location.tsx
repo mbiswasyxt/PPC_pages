@@ -55,7 +55,7 @@ export const config: TemplateConfig = {
     },
     // The entity language profiles that documents will be generated for.
     localization: {
-      locales: ["en"],
+      locales: ["en_GB"],
       primary: false,
     },
   },
@@ -139,7 +139,7 @@ const Location: Template<TemplateRenderProps> = ({
 
   return (
     <>
-      <PageLayout>
+      <PageLayout _site={_site} showStaticContent={false}>
         <Banner name={name} address={address} openTime={openTime}>
           <div className="bg-white h-40 w-1/5 flex items-center justify-center text-center flex-col space-y-4 rounded-lg">
             <div className="text-black text-base">Visit Us Today!</div>
