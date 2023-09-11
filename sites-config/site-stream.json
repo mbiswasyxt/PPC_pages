@@ -27,7 +27,7 @@
     "c_journeybrochure"
   ],
   "localization": {
-    "locales": ["en"],
+    "locales": ["en", "en_GB"],
     "primary": false
   }
 }

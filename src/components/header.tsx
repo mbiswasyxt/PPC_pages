@@ -1,5 +1,4 @@
 import * as React from "react";
-import Cta from "../components/cta";
 
 type Link = {
   label: string;
@@ -17,7 +16,7 @@ const links: Link[] = [
   },
 ];
 
-const Header = ({ _site }) => {
+const Header = ({ _site }: any) => {
   const { c_headerImage } = _site;
   console.log(c_headerImage);
   const linkDoms = links.map((link) => (

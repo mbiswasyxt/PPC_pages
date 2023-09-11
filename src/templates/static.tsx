@@ -2,21 +2,16 @@
  * This is an example of how to create a static template that uses getStaticProps to retrieve data.
  */
 import * as React from "react";
-import { fetch } from "@yext/pages/util";
 import "../index.css";
 import {
   Template,
   GetPath,
   GetHeadConfig,
   HeadConfig,
-  TransformProps,
   TemplateConfig,
   TemplateProps,
   TemplateRenderProps,
 } from "@yext/pages";
-import Card from "../components/Card";
-import Favicon from "../assets/images/yext-favicon.ico";
-import Banner from "../components/banner";
 import PageLayout from "../components/page-layout";
 import { ExternalImage } from "../types/ExternalImage";
 /**
@@ -84,16 +79,17 @@ export const getHeadConfig: GetHeadConfig<
  * This is the main template. It can have any name as long as it's the default export.
  * The props passed in here are the direct result from `transformProps`.
  */
-const Static: Template<TemplateRenderProps> = ({ document }) => {
+const Static: Template<TemplateRenderProps> = ({
+  relativePrefixToRoot,
+  path,
+  document,
+}) => {
   const { _site } = document;
-  // const { c_headerImage } = _site;
+  console.log(_site);
+
   return (
     <>
-      <PageLayout _site={_site}>
-        <div>
-          <img src={_site._c_headerImage}></img>
-        </div>
-      </PageLayout>
+      <PageLayout _site={_site}></PageLayout>
     </>
   );
 };
