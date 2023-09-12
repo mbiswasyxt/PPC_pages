@@ -48,6 +48,7 @@ export const config: TemplateConfig = {
       "slug",
       "geocodedCoordinate",
       "services",
+      "c_locationBanner",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -135,6 +136,7 @@ const Location: Template<TemplateRenderProps> = ({
     mainPhone,
     geocodedCoordinate,
     services,
+    c_locationBanner,
   } = document;
 
   return (
@@ -150,6 +152,7 @@ const Location: Template<TemplateRenderProps> = ({
             />
           </div>
         </Banner>
+        <img src={c_locationBanner.bannerImage.url} alt="" />
         <div className="centered-container">
           <div className="section">
             <div className="grid grid-cols-3 gap-x-10 gap-y-10">
