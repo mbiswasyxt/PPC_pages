@@ -85,7 +85,6 @@ const Static: Template<TemplateRenderProps> = ({
   document,
 }) => {
   const { _site } = document;
-  console.log(_site);
 
   return (
     <>

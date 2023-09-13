@@ -100,6 +100,12 @@ export interface Image {
 	alternateText?: string,
 }
 
+export enum CovidVaccinesOffered {
+	PFIZER = "Pfizer",
+	MODERNA = "Moderna",
+	JOHNSON___JOHNSON = "Johnson & Johnson",
+}
+
 export enum PickupAndDeliveryServices {
 	IN_STORE_PICKUP = "In-Store Pickup",
 	CURBSIDE_PICKUP = "Curbside Pickup",
@@ -345,6 +351,20 @@ export default interface Location {
 	brunchHours?: Hours,
 	covid19InformationUrl?: string,
 	covidMessaging?: string,
+	covidTestAppointmentUrl?: string,
+	covidTestingAppointmentRequired?: boolean,
+	covidTestingDriveThroughSite?: boolean,
+	covidTestingIsFree?: boolean,
+	covidTestingPatientRestrictions?: boolean,
+	covidTestingReferralRequired?: boolean,
+	covidTestingSiteInstructions?: string,
+	covidVaccineAppointmentRequired?: boolean,
+	covidVaccineDriveThroughSite?: boolean,
+	covidVaccineInformationUrl?: string,
+	covidVaccinePatientRestrictions?: boolean,
+	covidVaccineReferralRequired?: boolean,
+	covidVaccineSiteInstructions?: string,
+	covidVaccinesOffered?: CovidVaccinesOffered[],
 	deliveryHours?: Hours,
 	deliveryUrl?: string,
 	dineInHours?: Hours,

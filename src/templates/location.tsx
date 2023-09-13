@@ -27,13 +27,14 @@ import List from "../components/list";
 import PageLayout from "../components/page-layout";
 import StaticMap from "../components/static-map";
 import "../index.css";
+import "../components/PageLayout.css";
 
 /**
  * Required when Knowledge Graph data is used for a template.
  */
 export const config: TemplateConfig = {
   stream: {
-    $id: "my-stream-id-1",
+    $id: "my-stream-id-2",
     // Specifies the exact data that each generated document will contain. This data is passed in
     // directly as props to the default exported function.
     fields: [
@@ -49,6 +50,9 @@ export const config: TemplateConfig = {
       "geocodedCoordinate",
       "services",
       "c_locationBanner",
+      "c_richTextDescription",
+      "c_image_separator",
+      "c_imageAndDescription",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -137,12 +141,20 @@ const Location: Template<TemplateRenderProps> = ({
     geocodedCoordinate,
     services,
     c_locationBanner,
+    c_richTextDescription,
+    c_image_separator,
+    c_imageAndDescription,
+    description,
   } = document;
+  console.log(
+    c_imageAndDescription[1].bannerDescription.json.root.children[2],
+    "------*-------"
+  );
 
   return (
     <>
       <PageLayout _site={_site} showStaticContent={false}>
-        <Banner name={name} address={address} openTime={openTime}>
+        {/* <Banner name={name} address={address} openTime={openTime}>
           <div className="bg-white h-40 w-1/5 flex items-center justify-center text-center flex-col space-y-4 rounded-lg">
             <div className="text-black text-base">Visit Us Today!</div>
             <Cta
@@ -151,25 +163,204 @@ const Location: Template<TemplateRenderProps> = ({
               style="primary-cta"
             />
           </div>
-        </Banner>
-        <img src={c_locationBanner.bannerImage.url} alt="" />
-        <div className="centered-container">
-          <div className="section">
-            <div className="grid grid-cols-3 gap-x-10 gap-y-10">
-              <div className="bg-gray-100 p-5 space-y-12">
-                <Contact address={address} phone={mainPhone}></Contact>
-                {services && <List list={services}></List>}
-              </div>
-              <div className="col-span-2 pt-5 space-y-10">
-                <div>
-                  {hours && <Hours title={"Restaurant Hours"} hours={hours} />}
+        </Banner> */}
+        <section className="py-0 m-sub-landing-header u-color-white  u-bg-midnight-100">
+          <div className="inner">
+            <div className="container-fluid" style={{ width: "50%" }}>
+              <div className="row align-items-end h-100">
+                <div className="">
+                  <div className="content" style={{ marginTop: "20em" }}>
+                    <h1 className="title" style={{ fontSize: "51px" }}>
+                      {
+                        c_locationBanner.bannerDescription.json.root.children[0]
+                          .children[0].text
+                      }
+                    </h1>
+                    <h2>
+                      {
+                        c_locationBanner.bannerDescription.json.root.children[1]
+                          .children[0].text
+                      }
+                    </h2>
+                    <div className="copy"></div>
+
+                    <div className="buttons"></div>
+                  </div>
                 </div>
-                {geocodedCoordinate && (
-                  <StaticMap
-                    latitude={geocodedCoordinate.latitude}
-                    longitude={geocodedCoordinate.longitude}
-                  ></StaticMap>
+              </div>
+            </div>
+            <div
+              style={{
+                width: "50",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "end",
+                margin: "4em",
+              }}
+            >
+              {c_locationBanner ? (
+                <img
+                  src={c_locationBanner.bannerImage.url}
+                  alt=""
+                  style={{ height: "30em" }}
+                />
+              ) : null}
+            </div>
+          </div>
+          <div className="region">
+            <div className="breadcrumbs" style={{ border: "none" }}>
+              <img src={c_image_separator.url} />
+            </div>
+          </div>
+        </section>
+        <div style={{ background: "#eef4fa" }}>
+          <div className="section-title" style={{ margin: "4em" }}>
+            <h2
+              className="title"
+              style={{
+                color: "#3f4952",
+              }}
+            >
+              {
+                // c_imageAndDescription[0].bannerDescription.json.root.children[0]
+                //   .children[0].text
+                description
+              }
+            </h2>
+            <div
+              style={{
+                color: "#3f4952",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                height: "10em",
+                marginTop: "3em",
+              }}
+            >
+              <div>
+                {c_richTextDescription}
+                {/* {
+                c_imageAndDescription[0].bannerDescription.json.root.children[1]
+                  .children[0].text
+              } */}
+              </div>
+              <div>
+                {/* {
+                c_imageAndDescription[0].bannerDescription.json.root.children[2]
+                  .children[0].text
+              } */}
+              </div>
+              <div>
+                {/* {
+                c_imageAndDescription[0].bannerDescription.json.root.children[3]
+                  .children[0].text
+              } */}
+              </div>
+            </div>
+          </div>
+          <div>
+            <div style={{ position: "relative" }}>
+              <div style={{ display: "flex", margin: "4em" }}>
+                <div style={{ width: "50%" }}>
+                  <img src={c_imageAndDescription[0].bannerImage.url} />
+                </div>
+                <div style={{ width: "50%" }}></div>
+              </div>
+              <div
+                style={{
+                  background: "white",
+                  padding: "4em",
+                  width: "40%",
+                  position: "absolute",
+                  bottom: "8%",
+                  color: "#3f4952",
+                  left: "45%",
+                }}
+              >
+                <div style={{ color: "darkblue", fontSize: "2.5em" }}>
+                  {
+                    c_imageAndDescription[0].bannerDescription.json.root
+                      .children[0].children[0].text
+                  }
+                </div>
+                <div>
+                  {
+                    c_imageAndDescription[0].bannerDescription.json.root
+                      .children[1].children[0].text
+                  }
+                  {/* {
+                  c_imageAndDescription[0].bannerDescription.json.root
+                    .children[2].children[0].text
+                }
+                {
+                  c_imageAndDescription[0].bannerDescription.json.root
+                    .children[3].children[0].text
+                } */}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style={{ position: "relative" }}>
+            <div style={{ display: "flex" }}>
+              <div style={{ width: "50%" }}></div>
+              <div style={{ width: "50%" }}>
+                <img src={c_imageAndDescription[1].bannerImage.url} />
+              </div>
+            </div>
+            <div
+              style={{
+                background: "white",
+                padding: "5em",
+                width: "50%",
+                position: "absolute",
+                bottom: "8%",
+                marginLeft: "6em",
+                color: "#3f4952",
+              }}
+            >
+              <div style={{ color: "darkblue", fontSize: "2.5em" }}>
+                {
+                  c_imageAndDescription[1].bannerDescription.json.root
+                    .children[0].children[0].text
+                }
+              </div>
+              <div>
+                {
+                  c_imageAndDescription[1].bannerDescription.json.root
+                    .children[1].children[0].text
+                }
+                {c_imageAndDescription[1].bannerDescription.json.root.children[2].children.map(
+                  (item, i) => {
+                    return <li>{item.children[0].text}</li>;
+                  }
                 )}
+                {
+                  c_imageAndDescription[1].bannerDescription.json.root
+                    .children[3].children[0].text
+                }
+              </div>
+            </div>
+          </div>
+          <div className="centered-container">
+            <div className="section">
+              <div className="grid grid-cols-3 gap-x-10 gap-y-10">
+                <div className="bg-gray-100 p-5 space-y-12">
+                  <Contact address={address} phone={mainPhone}></Contact>
+                  {services && <List list={services}></List>}
+                </div>
+                <div className="col-span-2 pt-5 space-y-10">
+                  <div>
+                    {hours && (
+                      <Hours title={"Restaurant Hours"} hours={hours} />
+                    )}
+                  </div>
+                  {geocodedCoordinate && (
+                    <StaticMap
+                      latitude={geocodedCoordinate.latitude}
+                      longitude={geocodedCoordinate.longitude}
+                    ></StaticMap>
+                  )}
+                </div>
               </div>
             </div>
           </div>
