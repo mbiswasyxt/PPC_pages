@@ -18,7 +18,6 @@ const links: Link[] = [
 
 const Header = ({ _site }: any) => {
   const { c_headerImage } = _site;
-  console.log(c_headerImage);
   const linkDoms = links.map((link) => (
     <div key={link.label}>
       <a href={link.url} target="_blank" rel="noreferrer">

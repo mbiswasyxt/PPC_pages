@@ -28,7 +28,8 @@ import PageLayout from "../components/page-layout";
 import StaticMap from "../components/static-map";
 import "../index.css";
 import "../components/PageLayout.css";
-
+import { LexicalRichText } from "@yext/react-components";
+import { Image } from "@yext/sites-components";
 /**
  * Required when Knowledge Graph data is used for a template.
  */
@@ -53,6 +54,7 @@ export const config: TemplateConfig = {
       "c_richTextDescription",
       "c_image_separator",
       "c_imageAndDescription",
+      "c_contactOptions",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -145,11 +147,8 @@ const Location: Template<TemplateRenderProps> = ({
     c_image_separator,
     c_imageAndDescription,
     description,
+    c_contactOptions,
   } = document;
-  console.log(
-    c_imageAndDescription[1].bannerDescription.json.root.children[2],
-    "------*-------"
-  );
 
   return (
     <>
@@ -170,21 +169,13 @@ const Location: Template<TemplateRenderProps> = ({
               <div className="row align-items-end h-100">
                 <div className="">
                   <div className="content" style={{ marginTop: "20em" }}>
-                    <h1 className="title" style={{ fontSize: "51px" }}>
-                      {
-                        c_locationBanner.bannerDescription.json.root.children[0]
-                          .children[0].text
-                      }
-                    </h1>
                     <h2>
-                      {
-                        c_locationBanner.bannerDescription.json.root.children[1]
-                          .children[0].text
-                      }
+                      <LexicalRichText
+                        serializedAST={JSON.stringify(
+                          c_locationBanner.bannerDescription.json
+                        )}
+                      />
                     </h2>
-                    <div className="copy"></div>
-
-                    <div className="buttons"></div>
                   </div>
                 </div>
               </div>
@@ -199,9 +190,8 @@ const Location: Template<TemplateRenderProps> = ({
               }}
             >
               {c_locationBanner ? (
-                <img
-                  src={c_locationBanner.bannerImage.url}
-                  alt=""
+                <Image
+                  image={c_locationBanner.bannerImage}
                   style={{ height: "30em" }}
                 />
               ) : null}
@@ -209,7 +199,7 @@ const Location: Template<TemplateRenderProps> = ({
           </div>
           <div className="region">
             <div className="breadcrumbs" style={{ border: "none" }}>
-              <img src={c_image_separator.url} />
+              <Image image={c_image_separator} />
             </div>
           </div>
         </section>
@@ -221,11 +211,7 @@ const Location: Template<TemplateRenderProps> = ({
                 color: "#3f4952",
               }}
             >
-              {
-                // c_imageAndDescription[0].bannerDescription.json.root.children[0]
-                //   .children[0].text
-                description
-              }
+              {description}
             </h2>
             <div
               style={{
@@ -237,32 +223,16 @@ const Location: Template<TemplateRenderProps> = ({
                 marginTop: "3em",
               }}
             >
-              <div>
-                {c_richTextDescription}
-                {/* {
-                c_imageAndDescription[0].bannerDescription.json.root.children[1]
-                  .children[0].text
-              } */}
-              </div>
-              <div>
-                {/* {
-                c_imageAndDescription[0].bannerDescription.json.root.children[2]
-                  .children[0].text
-              } */}
-              </div>
-              <div>
-                {/* {
-                c_imageAndDescription[0].bannerDescription.json.root.children[3]
-                  .children[0].text
-              } */}
-              </div>
+              <div>{c_richTextDescription}</div>
+              <div></div>
+              <div></div>
             </div>
           </div>
           <div>
             <div style={{ position: "relative" }}>
               <div style={{ display: "flex", margin: "4em" }}>
                 <div style={{ width: "50%" }}>
-                  <img src={c_imageAndDescription[0].bannerImage.url} />
+                  <Image image={c_imageAndDescription[0].bannerImage} />
                 </div>
                 <div style={{ width: "50%" }}></div>
               </div>
@@ -277,26 +247,11 @@ const Location: Template<TemplateRenderProps> = ({
                   left: "45%",
                 }}
               >
-                <div style={{ color: "darkblue", fontSize: "2.5em" }}>
-                  {
-                    c_imageAndDescription[0].bannerDescription.json.root
-                      .children[0].children[0].text
-                  }
-                </div>
-                <div>
-                  {
-                    c_imageAndDescription[0].bannerDescription.json.root
-                      .children[1].children[0].text
-                  }
-                  {/* {
-                  c_imageAndDescription[0].bannerDescription.json.root
-                    .children[2].children[0].text
-                }
-                {
-                  c_imageAndDescription[0].bannerDescription.json.root
-                    .children[3].children[0].text
-                } */}
-                </div>
+                <LexicalRichText
+                  serializedAST={JSON.stringify(
+                    c_imageAndDescription[0].bannerDescription.json
+                  )}
+                />
               </div>
             </div>
           </div>
@@ -304,7 +259,7 @@ const Location: Template<TemplateRenderProps> = ({
             <div style={{ display: "flex" }}>
               <div style={{ width: "50%" }}></div>
               <div style={{ width: "50%" }}>
-                <img src={c_imageAndDescription[1].bannerImage.url} />
+                <Image image={c_imageAndDescription[1].bannerImage} />
               </div>
             </div>
             <div
@@ -318,27 +273,11 @@ const Location: Template<TemplateRenderProps> = ({
                 color: "#3f4952",
               }}
             >
-              <div style={{ color: "darkblue", fontSize: "2.5em" }}>
-                {
-                  c_imageAndDescription[1].bannerDescription.json.root
-                    .children[0].children[0].text
-                }
-              </div>
-              <div>
-                {
-                  c_imageAndDescription[1].bannerDescription.json.root
-                    .children[1].children[0].text
-                }
-                {c_imageAndDescription[1].bannerDescription.json.root.children[2].children.map(
-                  (item, i) => {
-                    return <li>{item.children[0].text}</li>;
-                  }
+              <LexicalRichText
+                serializedAST={JSON.stringify(
+                  c_imageAndDescription[1].bannerDescription.json
                 )}
-                {
-                  c_imageAndDescription[1].bannerDescription.json.root
-                    .children[3].children[0].text
-                }
-              </div>
+              />
             </div>
           </div>
           <div className="centered-container">
@@ -363,6 +302,23 @@ const Location: Template<TemplateRenderProps> = ({
                 </div>
               </div>
             </div>
+          </div>
+          <div className="px-8 flex justify-between w-full mx-auto">
+            {c_contactOptions.map((item: any, index: any) => (
+              <div className="flex gap-2 items-center w-1/2">
+                <div className="w-3/4">
+                  <LexicalRichText
+                    serializedAST={JSON.stringify(item.bannerDescription.json)}
+                  />
+                </div>
+                <div>
+                  <Image
+                    image={item.bannerImage}
+                    className="!w-3/5 h-3/4"
+                  ></Image>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </PageLayout>
