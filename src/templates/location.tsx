@@ -19,15 +19,13 @@ import {
   TemplateRenderProps,
 } from "@yext/pages";
 import * as React from "react";
-import Banner from "../components/banner";
 import Contact from "../components/contact";
-import Cta from "../components/cta";
 import Hours from "../components/hours";
 import List from "../components/list";
 import PageLayout from "../components/page-layout";
 import StaticMap from "../components/static-map";
 import "../index.css";
-import "../components/PageLayout.css";
+import "./PageLayout.css";
 import { LexicalRichText } from "@yext/react-components";
 import { Image } from "@yext/sites-components";
 /**
