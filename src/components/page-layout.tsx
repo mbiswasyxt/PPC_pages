@@ -10,7 +10,7 @@ type Props = {
 };
 
 const PageLayout = ({ _site, children, showStaticContent = true }: Props) => {
-  
+
   const {
     c_whystudy,
     c_title_arden,
@@ -23,6 +23,7 @@ const PageLayout = ({ _site, children, showStaticContent = true }: Props) => {
     c_journeycallback,
     c_journeyopendays,
     c_journeybrochure,
+    c_studyyour,
   } = _site;
   return (
     <div className="min-h-screen">
@@ -96,6 +97,12 @@ const PageLayout = ({ _site, children, showStaticContent = true }: Props) => {
                 }}
               ></div>
             </div>
+            <div className="c_studyyour">
+              <h2 className="c_studyyour" style={{ color: "#3f4952", display: "flex", padding: "1em 1em 1em 1em", marginLeft: "-50em", width: "40em", marginTop: "6em" }}>
+                Study your Qualifying Law Degree (QLD) through bended learning with Arden and unlock the door to your future as a legal professional.
+                Study at our central Manchester study centre just 2 days a week and study online the rest of the time. Discover our Law Degree today.
+              </h2>
+            </div>
             <div style={{ width: "70%", padding: "6em 4em" }}>
               <img
                 data-src="https://cdn.arden.ac.uk/s3fs-public/2021-03/WhatUni_Review_10.png?VersionId=cupbQ9A0RrwUKCRgY3bhKqxjLFHVRzxt"
@@ -149,7 +156,7 @@ const PageLayout = ({ _site, children, showStaticContent = true }: Props) => {
                     <div style={{ marginBottom: "1em" }}>
                       <img
                         src={c_whystudy.studyimage2.url}
-                        // style={{ height: "120px" }}
+                      // style={{ height: "120px" }}
                       />
                     </div>
                     <div style={{ width: "40em", lineHeight: "30px" }}>
@@ -185,7 +192,7 @@ const PageLayout = ({ _site, children, showStaticContent = true }: Props) => {
                     <div style={{ marginBottom: "1em" }}>
                       <img
                         src={c_whystudy.studyimage3.url}
-                        // style={{ height: "120px" }}
+                      // style={{ height: "120px" }}
                       />
                     </div>
                     <div style={{ width: "40em", lineHeight: "30px" }}>
@@ -215,7 +222,7 @@ const PageLayout = ({ _site, children, showStaticContent = true }: Props) => {
                     <div style={{ marginBottom: "1em" }}>
                       <img
                         src={c_whystudy.studyimage4.url}
-                        // style={{ height: "120px" }}
+                      // style={{ height: "120px" }}
                       />
                     </div>
                     <div style={{ width: "40em", lineHeight: "30px" }}>
@@ -281,7 +288,7 @@ const PageLayout = ({ _site, children, showStaticContent = true }: Props) => {
                     <div style={{ marginBottom: "1em" }}>
                       <img
                         src={c_whystudy.studyimage6.url}
-                        // style={{ height: "130px" }}
+                      // style={{ height: "130px" }}
                       />
                     </div>
                     <div style={{ width: "40em", lineHeight: "30px" }}>
@@ -327,11 +334,11 @@ const PageLayout = ({ _site, children, showStaticContent = true }: Props) => {
               <div
                 style={{
                   background: "white",
-                  padding: "5em",
+                  padding: "3em",
                   width: "50%",
                   position: "absolute",
                   bottom: "25%",
-                  marginLeft: "6em",
+                  marginLeft: "0.1em",
                   color: "#3f4952",
                 }}
               >
